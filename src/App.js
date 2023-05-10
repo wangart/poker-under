@@ -11,16 +11,18 @@ const unshuffledDeck = ['heart', 'diamond', 'club', 'spade'].flatMap(suit => Arr
 
 function shuffle(deck) {
   for (let i = 0; i < 52; i++) {
-    const newCardIndex = Math.floor(Math.random() * (51-i)) + i;
+    const newCardIndex = Math.floor(Math.random() * (52-i)) + i;
     const temp = deck[i];
     deck[i] = deck[newCardIndex];
     deck[newCardIndex] = temp;
   }
 
+  console.log(deck.map(c => `${c.value} ${c.suit}`));
   return deck;
 }
 
 const initialDeck = shuffle(unshuffledDeck);
+console.log(initialDeck);
 
 function App() {
   const [deck, setDeck] = useState(initialDeck.slice(9, initialDeck.length))
