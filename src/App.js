@@ -27,7 +27,6 @@ function App() {
   const [stacks, setStacks] = useState(initialDeck.slice(0,9).map(c => [c]));
 
   function placeCard(index, over) {
-    console.log(index);
     const newStack = stacks.slice();
     const newDeck = deck.slice();
 
@@ -50,7 +49,8 @@ function App() {
         <br/>
         <div className='cardBack'>
           <img
-          width={50}
+            alt='card back'
+            width={50}
             src="/cardback.svg"
           />
         </div>

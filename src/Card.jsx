@@ -22,7 +22,6 @@ function Card({suit, value, offset, live, placeCard, top}) {
 
   useEffect(() => {
     if (!live) {
-      console.log('set', suit, value, 'dead');
       setCssDead(true)
     }
   }, [live])
@@ -67,7 +66,8 @@ function Card({suit, value, offset, live, placeCard, top}) {
       <div className='back'>
         <div className='cardBack'>
           <img
-          width={50}
+            width={50}
+            alt='card back'
             src="/cardback.svg"
           />
         </div>
